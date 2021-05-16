@@ -15,7 +15,7 @@ const UserPlaces = () => {
   useEffect(()=>{
     const fetchPlaces = async()=>{      
       try {
-        const ResponseData = await sendRequest(`http://localhost:5000/api/places/user/${userId}`);
+        const ResponseData = await sendRequest(`${process.env.REACT_APP_BACKEND_URL}/places/user/${userId}`);
         setLoadedPlaces(ResponseData.places);      
       } catch(err) {}
 
